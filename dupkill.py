@@ -27,11 +27,7 @@ def retlist(url):
 	a = []
 	for x in url.query.split("&"):
 		a.append(x.split("=")[0])
-	ret = []
-	ret.append(url0)
-	ret.append(path)
-	ret.append(a)
-	return ret
+	return [url0,path,a]
 def cache():
 	i = 0
 	for sor in open(filename, "r"):
