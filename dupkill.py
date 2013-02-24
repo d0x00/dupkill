@@ -1,9 +1,10 @@
 #!/usr/bin/python
 from urlparse import urlparse
 build = []
+outname = "output"
 filename = "akarmi.txt"
 def main():
-  cache()
+	cache()
 	for url in build:
 		info = retlist(url)
 		for x in build:
@@ -18,7 +19,9 @@ def main():
 	for x in build:
 		i += 1
 		pass
+	writeOut()
 	print "I got the job done, the remaining url's is {0}.".format(i)
+	#ret = retlist("http://www.djcosmetic.com/query.php?pid=7&item=4&listfor=price2&type=list&num=60&page=1&order=price&keyword=anyad")
 	#print ret
 	pass
 def retlist(url):
@@ -45,6 +48,12 @@ def cache():
 		i += 1
 		pass
 	print "We start with {0} url's.".format(i)
+	pass
+def writeOut():
+	with open(outname, "w") as out:
+		for url in build:
+			out.write("{0}".format(url))
+			pass
 	pass
 if __name__ == '__main__':
 	main()
