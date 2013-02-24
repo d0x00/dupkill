@@ -1,8 +1,8 @@
 #!/usr/bin/python
 from urlparse import urlparse
 build = []
-outname = "output"
-filename = "akarmi.txt"
+outname = "" #output file here
+filename = "" #input file here
 def main():
 	cache()
 	for url in build:
@@ -21,8 +21,6 @@ def main():
 		pass
 	writeOut()
 	print "I got the job done, the remaining url's is {0}.".format(i)
-	#ret = retlist("http://www.djcosmetic.com/query.php?pid=7&item=4&listfor=price2&type=list&num=60&page=1&order=price&keyword=anyad")
-	#print ret
 	pass
 def retlist(url):
 	if not "www." in urlparse(url).netloc:
